@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	name = chinifabio
+	email = fabiochini99@gmail.com
+[pull]
+	rebase = false

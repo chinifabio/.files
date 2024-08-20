@@ -1,0 +1,40 @@
+import = [
+  "~/.config/alacritty/catppuccin-frappe.toml"
+]
+
+[window]
+dynamic_padding = true
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 0
+y = 0
+
+[window.position]
+x = 0
+y = 0
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "JetBrainsMonoNL Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMonoNL Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMonoNL Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMonoNL Nerd Font"
+style = "Regular"
