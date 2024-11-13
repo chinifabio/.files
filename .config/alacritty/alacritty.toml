@@ -1,7 +1,3 @@
-import = [
-  "~/.config/alacritty/catppuccin-frappe.toml"
-]
-
 [window]
 dynamic_padding = true
 

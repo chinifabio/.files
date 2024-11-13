@@ -5,10 +5,12 @@ export EDITOR=nvim
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 
-ZSH_TMUX_AUTOSTART=false
-ZSH_TMUX_AUTOCONNECT=false
+ZSH_TMUX_AUTOSTART=true
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  ZSH_TMUX_AUTOSTART=false
+fi
 
-plugins=(poetry git fzf zsh-autosuggestions tmux)
+plugins=(poetry git fzf zsh-autosuggestions tmux zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -19,6 +21,8 @@ export PATH="$PATH:/opt/node-v20.13.1-linux-x64/bin"
 export PATH="$PATH:$HOME/.local/share/android-studio/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH":"$HOME/matlab/bin"
+export PATH="$PATH":"home/fabio/go/bin"
+export PATH="$PATH":"/home/fabio/go/bin"
 eval "$(zoxide init zsh --cmd cd)"
 
 alias nv="nvim ."
@@ -37,7 +41,7 @@ myip() {
     echo $ip
 }
 
-res() {
-    sudo htop -H
-}
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
 
